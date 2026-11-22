@@ -1,0 +1,63 @@
+{
+  "format_version": 1,
+  "version": 1,
+  "fields": {
+    "host": {
+      "type": "string",
+      "label": "Host",
+      "description": "Where to measure latency to: an IP address or a host name, e.g. 1.1.1.1, or a full http:// address. It must answer plain HTTP on port 80 (8.8.8.8 does not; 1.1.1.1, 208.67.222.222 and google.com do).",
+      "default": "1.1.1.1",
+      "max_length": 96
+    },
+    "interval_ms": {
+      "type": "integer",
+      "label": "Update period, ms",
+      "description": "How often to measure: 500 is twice a second, 1000 once a second.",
+      "default": 500,
+      "min": 200,
+      "max": 60000
+    },
+    "value_font": {
+      "type": "enum",
+      "label": "Value font",
+      "description": "Font of the latency number in the corner. Small is 5 px tall, Condensed, Normal and Bold are 7 px.",
+      "default": "small",
+      "options": [
+        {
+          "value": "tiny",
+          "label": "Tiny"
+        },
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "condensed",
+          "label": "Condensed"
+        },
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "bold",
+          "label": "Bold"
+        }
+      ]
+    },
+    "warn_ms": {
+      "type": "integer",
+      "label": "Yellow from, ms",
+      "default": 60,
+      "min": 10,
+      "max": 2000
+    },
+    "bad_ms": {
+      "type": "integer",
+      "label": "Red from, ms",
+      "default": 150,
+      "min": 20,
+      "max": 5000
+    }
+  }
+}
